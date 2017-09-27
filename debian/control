@@ -1,0 +1,47 @@
+Source: golang-fsnotify
+Section: devel
+Priority: extra
+Maintainer: Debian Go Packaging Team <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders: Tianon Gravi <tianon@debian.org>,
+           Anthony Fok <foka@debian.org>,
+           Martín Ferrari <tincho@debian.org>
+Build-Depends: debhelper (>= 9),
+               dh-golang,
+               golang-any,
+               golang-golang-x-sys-dev (>= 0.0~git20160421),
+Standards-Version: 3.9.8
+Homepage: https://fsnotify.org/
+Vcs-Git: https://anonscm.debian.org/git/pkg-go/packages/golang-fsnotify.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-go/packages/golang-fsnotify.git
+XS-Go-Import-Path: github.com/fsnotify/fsnotify
+
+Package: golang-github-fsnotify-fsnotify-dev
+Architecture: all
+Depends: ${misc:Depends},
+         golang-golang-x-sys-dev (>= 0.0~git20160421)
+Replaces: golang-fsnotify-dev (<< 1.2.1-1~),
+          golang-github-go-fsnotify-fsnotify-dev (<< 1.3.0-1~)
+Breaks: golang-fsnotify-dev (<< 1.2.1-1~),
+        golang-github-go-fsnotify-fsnotify-dev (<< 1.3.0-1~)
+Provides: golang-fsnotify-dev
+Description: File system notifications for Go
+ Package fsnotify provides a platform-independent interface for file system
+ notifications, for use with the Go programming language.
+ .
+ This package contains the fsnotify library source.
+
+Package: golang-fsnotify-dev
+Section: oldlibs
+Architecture: all
+Depends: golang-github-fsnotify-fsnotify-dev, ${misc:Depends}
+Description: Transitional package for golang-github-fsnotify-fsnotify-dev
+ This is a transitional package to ease upgrades to the
+ golang-github-fsnotify-fsnotify-dev package. It can safely be removed.
+
+Package: golang-github-go-fsnotify-fsnotify-dev
+Section: oldlibs
+Architecture: all
+Depends: golang-github-fsnotify-fsnotify-dev, ${misc:Depends}
+Description: Transitional package for golang-github-fsnotify-fsnotify-dev
+ This is a transitional package to ease upgrades to the
+ golang-github-fsnotify-fsnotify-dev package. It can safely be removed.
